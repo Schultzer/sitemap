@@ -1,7 +1,7 @@
 defmodule Sitemap.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "1.0.0-rc.0"
 
   def project do
     [
@@ -45,11 +45,9 @@ defmodule Sitemap.MixProject do
   defp package do
     [
       maintainers: ["Benjamin Schultzer"],
-      licenses: ["MIT"],
+      licenses: ~w(MIT),
       links: links(),
-      files: [
-        "lib/sitemap/adapter/*.ex", "lib/sitemap/*.ex", "lib/*.ex", "config", "mix.exs", "README*", "CHANGELOG*", "LICENSE*"
-      ]
+      files: ~w(lib config mix.exs README* CHANGELOG* LICENSE*)
     ]
   end
 
@@ -57,15 +55,15 @@ defmodule Sitemap.MixProject do
     [
       source_ref: "v#{@version}",
       main: "readme",
-      extras: ["README.md", "CHANGELOG.md"]
+      extras: ~w(README.md CHANGELOG.md)
     ]
   end
 
   def links do
     %{
-      "GitHub"    => "https://github.com/schultzer/fast_sitemap",
-      "Readme"    => "https://github.com/schultzer/fast_sitemap/blob/v#{@version}/README.md",
-      "Changelog" => "https://github.com/schultzer/fast_sitemap/blob/v#{@version}/CHANGELOG.md"
+      "GitHub"    => "https://github.com/schultzer/sitemap",
+      "Readme"    => "https://github.com/schultzer/sitemap/blob/v#{@version}/README.md",
+      "Changelog" => "https://github.com/schultzer/sitemap/blob/v#{@version}/CHANGELOG.md"
     }
   end
 
