@@ -1,5 +1,9 @@
 # Changelog
 
+## Sitemap v1.0.0-rc.1 February 23, 2020
+
+* Remove duplicated key. Thanks to @isavita
+
 ## Sitemap v1.0.0-rc December 12, 2018
 
 Release candidate
