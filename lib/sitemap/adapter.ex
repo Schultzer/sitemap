@@ -47,11 +47,11 @@ defmodule Sitemap.Adapter do
     end
   end
 
-  def pre_work(%{host: <<host::binary()>>, public_path: <<public::binary()>>, public_path: path, name: name, compress: true}) do
+  def pre_work(%{host: <<host::binary()>>, public_path: <<public::binary()>> = path, name: name, compress: true}) do
     host = URI.parse(host)
     Config.update(%{host: host, public_path: host |> URI.merge(public) |> URI.to_string(), index_path: Path.join(path, "#{name}.xml.gz")})
   end
-  def pre_work(%{host: <<host::binary()>>, public_path: <<public::binary()>>, public_path: path, name: name, compress: false}) do
+  def pre_work(%{host: <<host::binary()>>, public_path: <<public::binary()>> = path, name: name, compress: false}) do
     host = URI.parse(host)
     Config.update(%{host: host, public_path: host |> URI.merge(public) |> URI.to_string(), index_path: Path.join(path, "#{name}.xml")})
   end
